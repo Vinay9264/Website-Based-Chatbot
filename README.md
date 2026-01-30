@@ -1,4 +1,4 @@
-<img width="938" height="862" alt="image" src="https://github.com/user-attachments/assets/2e229396-48dd-4241-8adb-e78622ecdd80" /># Website Q&A Chatbot Using Langchain and Groq
+# Website Q&A Chatbot Using Langchain and Groq
 
 ## Project Overview
 This project is a Website Question–Answering Chatbot that allows users to ask questions about the content of a given website.
