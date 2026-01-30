@@ -13,6 +13,7 @@ The system follows a Retrieval-Augmented Generation (RAG) approach:
 
 The application is built using Streamlit for the interface and LangChain for orchestrating the RAG pipeline.
 
+
 ## Architecture Explanation
 
 The project follows the below workflow:
@@ -60,6 +61,7 @@ The project follows the below workflow:
 
 LangChain helps modularize the entire RAG workflow and makes the system easier to maintain and extend.
 
+
 ## LLM Model Used and Reason
 
 Groq-hosted LLM (LLaMA / Mixtral family)
@@ -73,6 +75,7 @@ The model temperature is set to 0 to ensure:
 -> Reduced hallucination
 -> Consistent answers during evaluation
 
+
 ## Vector Database Used and Reason
 ### FAISS (Facebook AI Similarity Search)
 
@@ -85,19 +88,20 @@ Reasons for choosing FAISS:
 
 FAISS allows efficient similarity search, which is critical for retrieving relevant website content during question answering.
 
+
 ## Embedding Strategy
 
 The project uses HuggingFace sentence embeddings
 Model: sentence-transformers/all-MiniLM-L6-v2
 
 ### Embedding strategy details:
-
 -> Website text is split into chunks of fixed size
 -> Overlapping chunks are used to avoid loss of context
 -> Each chunk is embedded independently
 -> Embeddings are stored in FAISS for semantic search
 
 This approach balances accuracy, speed, and memory usage.
+
 
 ## Setup and Run Instructions
 
@@ -107,11 +111,13 @@ This approach balances accuracy, speed, and memory usage.
 4. Click in "Index Website Button"
 5. Ask questions regarding the content of the website
 
+
 ## Assumptions
 -> The website content is publicly accessible
 -> The website contains meaningful textual data
 -> The chatbot is expected to answer only from the provided website
 -> Internet access is available during execution
+
 
 ## Limitations
 
@@ -120,6 +126,7 @@ This approach balances accuracy, speed, and memory usage.
 -> Performance depends on website structure and content quality
 -> Images, videos, and dynamic content are not processed
 -> Answers are limited strictly to extracted text
+
 
 ## Future Improvements
 
