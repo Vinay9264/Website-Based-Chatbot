@@ -42,8 +42,11 @@ The project follows the below workflow:
 
 ### 7.Question Answering
 -> User queries are converted into embeddings
+
 -> Most relevant chunks are retrieved from FAISS
+
 -> Retrieved context is passed to the LLM
+
 -> The LLM generates a response strictly from the provided context
 
 ### 8.Conversation Handling
@@ -53,10 +56,15 @@ The project follows the below workflow:
 ## Frameworks Used
 ### LangChain
 -> LangChain is used to:
+
 -> Load website documents
+
 -> Split text into chunks
+
 -> Generate embeddings
+
 -> Build the conversational retrieval pipeline
+
 -> Manage prompt templates and chat history
 
 LangChain helps modularize the entire RAG workflow and makes the system easier to maintain and extend.
@@ -68,11 +76,16 @@ Groq-hosted LLM (LLaMA / Mixtral family)
 The Groq platform is used to access fast inference LLMs.
 Reasons for choosing Groq:
 -> Low latency response times
+
 -> Reliable performance for retrieval-based tasks
+
 -> Easy integration with LangChain
+
 The model temperature is set to 0 to ensure:
 -> Deterministic responses
+
 -> Reduced hallucination
+
 -> Consistent answers during evaluation
 
 
@@ -81,9 +94,13 @@ The model temperature is set to 0 to ensure:
 
 FAISS is used as the vector database to store and retrieve embeddings.
 Reasons for choosing FAISS:
+
 -> Lightweight and fast
+
 -> Ideal for local development
+
 -> No external service dependency
+
 -> Easy persistence and reload functionality
 
 FAISS allows efficient similarity search, which is critical for retrieving relevant website content during question answering.
@@ -95,9 +112,13 @@ The project uses HuggingFace sentence embeddings
 Model: sentence-transformers/all-MiniLM-L6-v2
 
 ### Embedding strategy details:
+
 -> Website text is split into chunks of fixed size
+
 -> Overlapping chunks are used to avoid loss of context
+
 -> Each chunk is embedded independently
+
 -> Embeddings are stored in FAISS for semantic search
 
 This approach balances accuracy, speed, and memory usage.
@@ -113,26 +134,37 @@ This approach balances accuracy, speed, and memory usage.
 
 
 ## Assumptions
+
 -> The website content is publicly accessible
+
 -> The website contains meaningful textual data
+
 -> The chatbot is expected to answer only from the provided website
+
 -> Internet access is available during execution
 
 
 ## Limitations
 
 -> Only single-page URLs are supported
+
 -> Does not crawl multiple internal links
+
 -> Performance depends on website structure and content quality
+
 -> Images, videos, and dynamic content are not processed
+
 -> Answers are limited strictly to extracted text
 
 
 ## Future Improvements
 
 -> Multi-page website crawling
+
 -> Support for PDF and document uploads
+
 -> Better source citation for answers
+
 -> Improved UI with highlighted references
 -> Advanced memory handling for longer conversations
 -> Deployment on cloud platforms
