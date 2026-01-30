@@ -1,0 +1,15 @@
+langchain
+python-dotenv
+ipykernel
+langchain-community
+bs4
+langchain-text-splitters
+sentence_transformers
+langchain_huggingface
+faiss-cpu
+langchain_chroma
+langchain-groq
+duckduckgo_search==5.3.1b1
+validators==0.28.1
+unstructured
+huggingface_hub
